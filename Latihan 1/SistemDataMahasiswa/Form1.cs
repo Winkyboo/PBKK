@@ -7,8 +7,6 @@ namespace DataMahasiswa
     public class Form1 : Form
     {
         private MahasiswaService _service = new MahasiswaService();
-
-        // UI Controls
         private TextBox txtNIM, txtNama, txtProdi, txtIPK, txtCariNIM;
         private Button btnTambah, btnCari, btnHapus, btnClear;
         private DataGridView dgvMahasiswa;
@@ -21,14 +19,13 @@ namespace DataMahasiswa
 
         private void InitializeComponent()
         {
-            // Theme Palette (Modern Slate & Purple Accent)
-            Color bgCanvas = Color.FromArgb(18, 18, 24);         // Dark Slate Canvas
-            Color cardBg = Color.FromArgb(28, 28, 38);           // Sidebar & Card Background
-            Color inputBg = Color.FromArgb(38, 38, 52);          // Input Box Background
-            Color textPrimary = Color.FromArgb(240, 240, 245);   // Primary Text
-            Color textMuted = Color.FromArgb(140, 140, 160);     // Subtitle/Label Text
-            Color accentPurple = Color.FromArgb(114, 9, 183);    // Primary Accent Button
-            Color accentRed = Color.FromArgb(229, 56, 59);       // Danger Button
+            Color bgCanvas = Color.FromArgb(18, 18, 24);         
+            Color cardBg = Color.FromArgb(28, 28, 38);           
+            Color inputBg = Color.FromArgb(38, 38, 52);          
+            Color textPrimary = Color.FromArgb(240, 240, 245);   
+            Color textMuted = Color.FromArgb(140, 140, 160);     
+            Color accentPurple = Color.FromArgb(114, 9, 183);   
+            Color accentRed = Color.FromArgb(229, 56, 59);       
             Color borderGrid = Color.FromArgb(45, 45, 60);
 
             this.Text = "Dashboard Data Mahasiswa";
@@ -38,9 +35,7 @@ namespace DataMahasiswa
             this.ForeColor = textPrimary;
             this.MinimumSize = new Size(900, 550);
 
-            // ==========================================
-            // LEFT SIDEBAR (Input Form Panel)
-            // ==========================================
+            // Input Form Panel
             sidebarPanel = new Panel()
             {
                 Location = new Point(20, 20),
@@ -83,9 +78,7 @@ namespace DataMahasiswa
                 lblProdi, txtProdi, lblIPK, txtIPK, btnTambah, btnClear 
             });
 
-            // ==========================================
-            // RIGHT PANEL (Search Bar & Data Grid)
-            // ==========================================
+            // Search Bar & Data Grid
             tablePanel = new Panel()
             {
                 Location = new Point(340, 20),
@@ -152,7 +145,7 @@ namespace DataMahasiswa
             this.Controls.Add(tablePanel);
         }
 
-        // --- Helper Methods ---
+        // Helper Methods 
         private Label CreateLabel(string text, Point loc, Color color)
         {
             return new Label() { Text = text, Location = loc, AutoSize = true, ForeColor = color, Font = new Font("Segoe UI", 8.5f, FontStyle.Bold) };
@@ -203,7 +196,7 @@ namespace DataMahasiswa
             txtCariNIM.Clear();
         }
 
-        // --- Event Handlers ---
+        // Event Handlers
         private void BtnTambah_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtNIM.Text) || string.IsNullOrWhiteSpace(txtNama.Text))
