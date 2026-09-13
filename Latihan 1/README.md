@@ -1,7 +1,7 @@
 # Latihan 1 PBKK
 
 | Nama | NRP | Mata Kuliah | Kelas | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | 
 | Willy Marcelius | 5025241096 | Pemrograman Berbasis Kerangka Kerja | D |
 
 
