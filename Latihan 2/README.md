@@ -14,12 +14,12 @@
 
 1. Inisialisasi project Windows Forms:
    ```bash
-   dotnet new winforms -n CalculatorApp
+   dotnet new winforms -n KalkulatorSederhana
    ```
 
 2. Masuk ke folder project:
    ```bash
-   cd CalculatorApp
+   cd KalkulatorSederhana
    ```
 
 3. Jalankan aplikasi:
