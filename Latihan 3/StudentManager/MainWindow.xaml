@@ -1,0 +1,259 @@
+﻿<Window x:Class="StudentManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="STUDENT // DATABASE OS" Height="800" Width="1280"
+        WindowStartupLocation="CenterScreen"
+        Background="#0A0B10">
+
+    <Window.Resources>
+        <!-- Cyberpunk Palette & Styles -->
+        <SolidColorBrush x:Key="CyberBackground" Color="#0A0B10"/>
+        <SolidColorBrush x:Key="SidebarBackground" Color="#0F101A"/>
+        <SolidColorBrush x:Key="CardBackground" Color="#151625"/>
+        <SolidColorBrush x:Key="InputBackground" Color="#1D1E30"/>
+        <SolidColorBrush x:Key="CyberCyan" Color="#00F0FF"/>
+        <SolidColorBrush x:Key="CyberPink" Color="#FF0055"/>
+        <SolidColorBrush x:Key="BorderColor" Color="#2A2C44"/>
+        <SolidColorBrush x:Key="TextPrimary" Color="#E0E6ED"/>
+        <SolidColorBrush x:Key="TextSecondary" Color="#7A889B"/>
+
+        <!-- Custom Dark Input Controls Style -->
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="{StaticResource InputBackground}"/>
+            <Setter Property="Foreground" Value="{StaticResource TextPrimary}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="CaretBrush" Value="{StaticResource CyberCyan}"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+
+        <Style TargetType="ComboBox">
+            <Setter Property="Background" Value="{StaticResource InputBackground}"/>
+            <Setter Property="Foreground" Value="#000000"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="8,6"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+
+        <Style TargetType="DataGrid">
+            <Setter Property="Background" Value="{StaticResource CardBackground}"/>
+            <Setter Property="RowBackground" Value="#151625"/>
+            <Setter Property="AlternatingRowBackground" Value="#1A1B2E"/>
+            <Setter Property="Foreground" Value="{StaticResource TextPrimary}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#25273D"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+
+        <!-- Custom Style Header DataGrid (Cyberpunk Dark) -->
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#1D1E30"/>
+            <Setter Property="Foreground" Value="{StaticResource CyberCyan}"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="12,10"/>
+            <Setter Property="BorderThickness" Value="0,0,1,1"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <!-- Left Sidebar Dashboard -->
+            <ColumnDefinition Width="280"/>
+            <!-- Main Content Area -->
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ================= LEFT SIDEBAR DASHBOARD ================= -->
+        <Border Grid.Column="0" Background="{StaticResource SidebarBackground}" BorderBrush="{StaticResource BorderColor}" BorderThickness="0,0,1,0" Padding="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- System Header / Branding -->
+                <StackPanel Grid.Row="0" Margin="0,10,0,30">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                        <TextBlock Text="CYBER" Foreground="{StaticResource CyberCyan}" FontSize="22" FontWeight="Black"/>
+                        <TextBlock Text="//OS" Foreground="{StaticResource CyberPink}" FontSize="22" FontWeight="Black"/>
+                    </StackPanel>
+                    <TextBlock Text="STUDENT MANAGEMENT SYSTEM v2.0" Foreground="{StaticResource TextSecondary}" FontSize="10" FontWeight="Bold"/>
+                </StackPanel>
+
+                <!-- Analytics / Statistics Cards -->
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                    <StackPanel Name="StatsStack">
+                        <TextBlock Text="SYSTEM METRICS" Foreground="{StaticResource CyberCyan}" FontSize="12" FontWeight="Bold" Margin="0,0,0,15"/>
+
+                        <!-- Total Students Card -->
+                        <Border Background="{StaticResource CardBackground}" BorderBrush="{StaticResource CyberCyan}" BorderThickness="1,0,0,0" CornerRadius="4" Padding="15" Margin="0,0,0,12">
+                            <StackPanel>
+                                <TextBlock Text="TOTAL STUDENTS" Foreground="{StaticResource TextSecondary}" FontSize="10" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding TotalStudents}" Foreground="{StaticResource CyberCyan}" FontSize="28" FontWeight="Black" Margin="0,5,0,0"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Informatika Count -->
+                        <Border Background="{StaticResource CardBackground}" BorderBrush="{StaticResource BorderColor}" BorderThickness="1" CornerRadius="4" Padding="12" Margin="0,0,0,10">
+                            <Grid>
+                                <TextBlock Text="Teknik Informatika" Foreground="{StaticResource TextPrimary}" FontSize="12"/>
+                                <TextBlock Text="{Binding TotalInformatika}" Foreground="{StaticResource CyberPink}" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right"/>
+                            </Grid>
+                        </Border>
+
+                        <!-- Industri Count -->
+                        <Border Background="{StaticResource CardBackground}" BorderBrush="{StaticResource BorderColor}" BorderThickness="1" CornerRadius="4" Padding="12" Margin="0,0,0,10">
+                            <Grid>
+                                <TextBlock Text="Teknik Industri" Foreground="{StaticResource TextPrimary}" FontSize="12"/>
+                                <TextBlock Text="{Binding TotalIndustri}" Foreground="{StaticResource CyberPink}" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right"/>
+                            </Grid>
+                        </Border>
+
+                        <!-- Aktuaria Count -->
+                        <Border Background="{StaticResource CardBackground}" BorderBrush="{StaticResource BorderColor}" BorderThickness="1" CornerRadius="4" Padding="12" Margin="0,0,0,10">
+                            <Grid>
+                                <TextBlock Text="Aktuaria" Foreground="{StaticResource TextPrimary}" FontSize="12"/>
+                                <TextBlock Text="{Binding TotalAktuaria}" Foreground="{StaticResource CyberPink}" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right"/>
+                            </Grid>
+                        </Border>
+
+                        <!-- Male Count -->
+                        <Border Background="{StaticResource CardBackground}" BorderBrush="{StaticResource BorderColor}" BorderThickness="1" CornerRadius="4" Padding="12" Margin="0,0,0,10">
+                            <Grid>
+                                <TextBlock Text="Laki-laki" Foreground="{StaticResource TextPrimary}" FontSize="12"/>
+                                <TextBlock Text="{Binding TotalLakiLaki}" Foreground="{StaticResource TextPrimary}" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right"/>
+                            </Grid>
+                        </Border>
+
+                        <!-- Female Count -->
+                        <Border Background="{StaticResource CardBackground}" BorderBrush="{StaticResource BorderColor}" BorderThickness="1" CornerRadius="4" Padding="12" Margin="0,0,0,10">
+                            <Grid>
+                                <TextBlock Text="Perempuan" Foreground="{StaticResource TextPrimary}" FontSize="12"/>
+                                <TextBlock Text="{Binding TotalPerempuan}" Foreground="{StaticResource TextPrimary}" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right"/>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <!-- Sidebar Footer Quick Reset Action -->
+                <Button Grid.Row="2" Content="System Reset Form" Command="{Binding ResetCommand}" 
+                        Background="Transparent" Foreground="{StaticResource TextSecondary}" 
+                        BorderBrush="{StaticResource BorderColor}" BorderThickness="1" Padding="10" 
+                        Cursor="Hand"/>
+            </Grid>
+        </Border>
+
+        <!-- ================= MAIN CONTENT AREA ================= -->
+        <Grid Grid.Column="1" Margin="25">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Top Search Bar -->
+            <Grid Grid.Row="0" Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Grid.Column="0" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
+                         Padding="12,10" VerticalContentAlignment="Center" 
+                         BorderBrush="{StaticResource BorderColor}"/>
+                
+                <Button Grid.Column="1" Content="SEARCH DATA" Command="{Binding SearchCommand}" 
+                        Background="{StaticResource CyberCyan}" Foreground="#000000" 
+                        FontWeight="Bold" Padding="20,10" Margin="10,0,0,0" 
+                        BorderThickness="0" Cursor="Hand"/>
+            </Grid>
+
+            <!-- Student Data Entry Form Card -->
+            <Border Grid.Row="1" Background="{StaticResource CardBackground}" BorderBrush="{StaticResource BorderColor}" BorderThickness="1" CornerRadius="6" Padding="20" Margin="0,0,0,20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- NRP Input -->
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="NRP" Foreground="{StaticResource TextSecondary}" VerticalAlignment="Center" Margin="5"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SelectedStudent.NRP, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+                    <!-- Nama Input -->
+                    <TextBlock Grid.Row="0" Grid.Column="3" Text="NAMA" Foreground="{StaticResource TextSecondary}" VerticalAlignment="Center" Margin="5"/>
+                    <TextBox Grid.Row="0" Grid.Column="4" Text="{Binding SelectedStudent.Nama, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+                    <!-- Prodi ComboBox -->
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="PRODI" Foreground="{StaticResource TextSecondary}" VerticalAlignment="Center" Margin="5"/>
+                    <ComboBox Grid.Row="1" Grid.Column="1" SelectedValuePath="Content" SelectedValue="{Binding SelectedStudent.Prodi, UpdateSourceTrigger=PropertyChanged}" Margin="5">
+                        <ComboBoxItem Content="Teknik Informatika"/>
+                        <ComboBoxItem Content="Teknik Industri"/>
+                        <ComboBoxItem Content="Aktuaria"/>
+                    </ComboBox>
+
+                    <!-- Gender ComboBox -->
+                    <TextBlock Grid.Row="1" Grid.Column="3" Text="GENDER" Foreground="{StaticResource TextSecondary}" VerticalAlignment="Center" Margin="5"/>
+                    <ComboBox Grid.Row="1" Grid.Column="4" SelectedValuePath="Content" SelectedValue="{Binding SelectedStudent.Gender, UpdateSourceTrigger=PropertyChanged}" Margin="5">
+                        <ComboBoxItem Content="Laki-laki"/>
+                        <ComboBoxItem Content="Perempuan"/>
+                    </ComboBox>
+
+                    <!-- Email Input -->
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="EMAIL" Foreground="{StaticResource TextSecondary}" VerticalAlignment="Center" Margin="5"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Text="{Binding SelectedStudent.Email, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+                    <!-- Action Buttons -->
+                    <StackPanel Grid.Row="3" Grid.ColumnSpan="5" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,5,0">
+                        <Button Content="[ + ] SIMPAN" Command="{Binding SaveCommand}" 
+                                Background="{StaticResource CyberPink}" Foreground="White" 
+                                FontWeight="Bold" Width="120" Height="38" Margin="5,0" 
+                                BorderThickness="0" Cursor="Hand"/>
+                        <Button Content="[ X ] HAPUS" Command="{Binding DeleteCommand}" 
+                                Background="#3A1C28" Foreground="{StaticResource CyberPink}" 
+                                FontWeight="Bold" Width="120" Height="38" Margin="5,0" 
+                                BorderBrush="{StaticResource CyberPink}" BorderThickness="1" Cursor="Hand"/>
+                        <Button Content="RESET" Command="{Binding ResetCommand}" 
+                                Background="Transparent" Foreground="{StaticResource TextSecondary}" 
+                                Width="90" Height="38" Margin="5,0" 
+                                BorderBrush="{StaticResource BorderColor}" BorderThickness="1" Cursor="Hand"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Cyberpunk DataGrid -->
+            <Border Grid.Row="2" BorderBrush="{StaticResource BorderColor}" BorderThickness="1" CornerRadius="6" ClipToBounds="True">
+                <DataGrid ItemsSource="{Binding Students}"
+                          SelectedItem="{Binding SelectedStudent, Mode=TwoWay}"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          RowHeaderWidth="0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="60"/>
+                        <DataGridTextColumn Header="NRP" Binding="{Binding NRP}" Width="140"/>
+                        <DataGridTextColumn Header="NAMA" Binding="{Binding Nama}" Width="*"/>
+                        <DataGridTextColumn Header="PRODI" Binding="{Binding Prodi}" Width="180"/>
+                        <DataGridTextColumn Header="GENDER" Binding="{Binding Gender}" Width="120"/>
+                        <DataGridTextColumn Header="EMAIL" Binding="{Binding Email}" Width="220"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
