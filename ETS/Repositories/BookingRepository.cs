@@ -52,14 +52,18 @@ public static class BookingRepository
             Select + @"WHERE b.Tanggal = CAST(GETDATE() AS date) AND b.[Status] = 'Disetujui'
                        ORDER BY b.JamMulai, r.Nama", Map);
 
-    /// <summary>Bentrok hanya dihitung terhadap booking yang sudah disetujui.</summary>
-    public static async Task<bool> HasConflictAsync(int ruanganId, DateTime tanggal, TimeSpan mulai, TimeSpan selesai, int excludeId)
+    /// <summary>Memeriksa bentrok dengan booking yang sudah disetujui, dan opsional yang masih menunggu.</summary>
+    public static async Task<bool> HasConflictAsync(int ruanganId, DateTime tanggal, TimeSpan mulai, TimeSpan selesai,
+                                                    int excludeId, bool includePending = false)
     {
         int n = await Db.ScalarAsync<int>(
             @"SELECT COUNT(*) FROM dbo.Booking
-              WHERE RuanganId = @r AND Tanggal = @t AND [Status] = 'Disetujui' AND BookingId <> @id
+              WHERE RuanganId = @r AND Tanggal = @t
+                AND ([Status] = 'Disetujui' OR (@includePending = 1 AND [Status] = 'Menunggu'))
+                AND BookingId <> @id
                 AND JamMulai < @s AND JamSelesai > @m",
-            Db.P("@r", ruanganId), Db.P("@t", tanggal.Date), Db.P("@id", excludeId), Db.P("@s", selesai), Db.P("@m", mulai));
+            Db.P("@r", ruanganId), Db.P("@t", tanggal.Date), Db.P("@id", excludeId),
+            Db.P("@s", selesai), Db.P("@m", mulai), Db.P("@includePending", includePending));
         return n > 0;
     }
 

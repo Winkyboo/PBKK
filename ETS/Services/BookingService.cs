@@ -25,8 +25,8 @@ public static class BookingService
         if (keperluan.Length < 5) throw new AppException("Keperluan wajib diisi, minimal 5 karakter.");
         if (keperluan.Length > 200) throw new AppException("Keperluan maksimal 200 karakter.");
 
-        if (await BookingRepository.HasConflictAsync(ruangan.RuanganId, tanggal, mulai, selesai, 0))
-            throw new AppException("Jadwal bentrok dengan booking lain yang sudah disetujui. Pilih jam atau ruangan lain.");
+        if (await BookingRepository.HasConflictAsync(ruangan.RuanganId, tanggal, mulai, selesai, 0, includePending: true))
+            throw new AppException("Jadwal bentrok dengan booking lain yang masih menunggu atau sudah disetujui. Pilih jam atau ruangan lain.");
 
         await BookingRepository.InsertAsync(Session.Current.UserId, ruangan.RuanganId, tanggal, mulai, selesai,
                                             keperluan, fasilitasIds.ToList());
