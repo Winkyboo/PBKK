@@ -1,0 +1,48 @@
+<Window x:Class="BookingKampus.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Masuk | Booking Kampus" Width="900" Height="560" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" Style="{StaticResource AppWindow}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="370"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Panel kuas biru: nama aplikasi ditulis sebagai teks (belum ada logo resmi) -->
+        <Grid Grid.Column="0" Panel.ZIndex="1">
+            <Border Background="{StaticResource AzureBrush}"/>
+            <Path Data="{StaticResource BrushEdge}" Fill="{StaticResource AzureBrush}" Stretch="Fill"
+                  Width="18" HorizontalAlignment="Right" Margin="0,0,-17,0"/>
+            <StackPanel VerticalAlignment="Center" Margin="40,0,36,0">
+                <TextBlock Text="Booking Kampus" Style="{StaticResource H1}" FontSize="44" TextWrapping="Wrap"
+                           Foreground="{StaticResource InkOnAzureBrush}"/>
+                <TextBlock Text="Pemesanan ruangan dan fasilitas kampus, dari pengajuan sampai persetujuan."
+                           Foreground="{StaticResource InkOnAzureBrush}" FontSize="16" TextWrapping="Wrap" Margin="2,12,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="72,0,72,0">
+            <TextBlock Text="Masuk" Style="{StaticResource H2}" FontSize="30"/>
+            <TextBlock Text="Gunakan akun yang diberikan administrator." Style="{StaticResource Muted}" Margin="0,2,0,8"/>
+
+            <TextBlock Text="Username" Style="{StaticResource FieldLabel}"/>
+            <TextBox x:Name="UsernameBox" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                     AutomationProperties.Name="Username" MaxLength="50"/>
+
+            <TextBlock Text="Kata sandi" Style="{StaticResource FieldLabel}"/>
+            <PasswordBox x:Name="PasswordBox" AutomationProperties.Name="Kata sandi" MaxLength="100"/>
+
+            <TextBlock Text="{Binding ErrorMessage}" Foreground="{StaticResource DangerBrush}" FontWeight="SemiBold"
+                       TextWrapping="Wrap" Margin="0,14,0,0"
+                       Visibility="{Binding HasError, Converter={StaticResource BoolToVis}}"
+                       AutomationProperties.LiveSetting="Assertive"/>
+
+            <Button Content="Masuk" Style="{StaticResource PrimaryButton}" IsDefault="True" Margin="0,22,0,0"
+                    Click="OnLoginClick" IsEnabled="{Binding IsBusy, Converter={StaticResource InvBool}}"/>
+            <ProgressBar IsIndeterminate="True" Height="4" Margin="0,12,0,0" BorderThickness="0" Background="Transparent"
+                         Foreground="{StaticResource AzureBrush}"
+                         Visibility="{Binding IsBusy, Converter={StaticResource BoolToVis}}"/>
+        </StackPanel>
+    </Grid>
+</Window>
