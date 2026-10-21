@@ -37,4 +37,4 @@ Ruang lingkup fitur aplikasi:
 
 ### 3. Poster Infografis
 
-![Poster infografis aplikasi Booking Kampus](./Poster%20Booking%20Kampus%402x%20%282%29.png)
+![Poster Infografis Booking Kampus](Documentation/PosterInfografis.png)
