@@ -10,7 +10,7 @@
 
 **Video demo:** 
 ```bash
-https://youtu.be/e4ZRHAcgmwg
+https://youtu.be/jzrz0WBJIos
 ```
 
 ## Aplikasi Desktop Booking Kampus
