@@ -1,4 +1,4 @@
-# PBKK: Framework CodeIgniter (Latihan 1 & 2)
+# Latihan Pertemuan 9 PBKK: Framework CodeIgniter 
 
 | Nama | NRP | Mata Kuliah | Kelas |
 | --- | --- | --- | --- |
