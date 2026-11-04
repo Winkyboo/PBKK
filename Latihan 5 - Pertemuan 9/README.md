@@ -29,7 +29,6 @@ Setiap aplikasi ditempatkan di folder dan port yang berbeda. Ketiganya memakai *
 - [Model Data](#model-data)
 - [Dokumentasi Tampilan](#dokumentasi-tampilan)
 - [Struktur Folder](#struktur-folder)
-- [Git Ignore](#git-ignore)
 
 ## Sekilas CodeIgniter dan MVC
 
