@@ -274,7 +274,7 @@ Tabel `equipments` menyimpan stok dan tarif sewa alat. Pada SIAKAD, `frs_detail`
 ![checkoutpesanan](Documentation/co.png)
 ![pesanan ditambahkan](Documentation/codone.png)
 
-- **Panel admin:** tambahkan screenshot pengelolaan produk atau pesanan di sini.
+- **Panel admin:** 
 
 ![dashboard admin](Documentation/dash.png)
 ![mengelola produk](Documentation/product.png)
