@@ -1,0 +1,5 @@
+<?= $this->extend('layouts/main') ?>
+<?= $this->section('content') ?>
+<div class="page-heading"><div><span class="eyebrow">Pengajaran</span><h1>Kelas yang Diampu</h1><p>Pilih kelas untuk melihat peserta dan menginput nilai.</p></div></div>
+<section class="surface-card"><div class="table-responsive"><table class="table data-table mb-0"><thead><tr><th>Kode / Mata kuliah</th><th>Kelas</th><th>Semester</th><th>Peserta</th><th></th></tr></thead><tbody><?php if ($kelas): foreach ($kelas as $row): ?><tr><td><strong><?= esc($row['kode']) ?></strong><span class="d-block small text-muted"><?= esc($row['mata_kuliah']) ?> · <?= (int) $row['sks'] ?> SKS</span></td><td><?= esc($row['nama_kelas']) ?></td><td><?= esc($row['semester']) ?> <?= esc($row['tahun_ajaran']) ?></td><td><?= (int) $row['jumlah_mahasiswa'] ?> / <?= (int) $row['kuota'] ?></td><td class="text-end"><a class="btn btn-primary btn-sm" href="<?= site_url('dosen/kelas/' . (int) $row['id']) ?>">Kelola nilai</a></td></tr><?php endforeach; else: ?><tr><td colspan="5" class="empty-row">Belum ada kelas yang ditugaskan.</td></tr><?php endif ?></tbody></table></div></section>
+<?= $this->endSection() ?>

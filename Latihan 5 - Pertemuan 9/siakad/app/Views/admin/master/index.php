@@ -1,0 +1,7 @@
+<?= $this->extend('layouts/main') ?>
+<?= $this->section('content') ?>
+<div class="page-heading"><div><span class="eyebrow">Data akademik</span><h1><?= esc($title) ?></h1><p>Kelola data <?= strtolower(esc($title)) ?> dan relasinya.</p></div><a class="btn btn-primary" href="<?= site_url('admin/data/' . $entity . '/baru') ?>">Tambah data</a></div>
+<section class="surface-card"><div class="table-responsive"><table class="table data-table mb-0"><thead><tr><?php foreach ($config['columns'] as $label): ?><th><?= esc($label) ?></th><?php endforeach ?><th class="text-end">Aksi</th></tr></thead><tbody>
+<?php if ($rows): foreach ($rows as $row): ?><tr><?php foreach ($config['columns'] as $key => $label): ?><td><?= esc((string) ($row[$key] ?? '—')) ?></td><?php endforeach ?><td class="text-end text-nowrap"><a class="btn btn-outline-primary btn-sm" href="<?= site_url('admin/data/' . $entity . '/' . (int) $row['id'] . '/ubah') ?>">Ubah</a> <form class="d-inline" action="<?= site_url('admin/data/' . $entity . '/' . (int) $row['id'] . '/hapus') ?>" method="post" onsubmit="return confirm('Hapus data ini?')"><?= csrf_field() ?><button class="btn btn-outline-danger btn-sm" type="submit">Hapus</button></form></td></tr><?php endforeach; else: ?><tr><td colspan="<?= count($config['columns']) + 1 ?>" class="empty-row">Belum ada data. Tambahkan data pertama.</td></tr><?php endif ?>
+</tbody></table></div></section>
+<?= $this->endSection() ?>

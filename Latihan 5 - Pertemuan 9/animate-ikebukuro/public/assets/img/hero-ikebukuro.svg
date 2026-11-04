@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" role="img" aria-labelledby="title desc">
+  <title id="title">Koleksi merchandise anime</title><desc id="desc">Ilustrasi artbook, acrylic stand, dan pin koleksi dengan langit biru lembut.</desc>
+  <defs><linearGradient id="sky" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#dff1fb"/><stop offset="1" stop-color="#a9d8f2"/></linearGradient><linearGradient id="book" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#edf4f8"/></linearGradient><filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#315776" flood-opacity=".15"/></filter></defs>
+  <rect width="960" height="680" rx="34" fill="url(#sky)"/>
+  <circle cx="790" cy="125" r="58" fill="#fff4d7" opacity=".9"/>
+  <path d="M0 476c119-44 210-40 308-15 133 34 226 13 340-28 124-44 210-37 312-2v249H0z" fill="#f8fbfc" opacity=".8"/>
+  <path d="M0 545c113-29 219-13 322 17 142 41 248 25 366-12 97-30 182-25 272-5v135H0z" fill="#fff"/>
+  <g filter="url(#shadow)" transform="translate(150 152) rotate(-8 170 250)">
+    <rect x="0" y="0" width="278" height="388" rx="16" fill="#fff"/>
+    <rect x="17" y="17" width="244" height="354" rx="9" fill="#83c2e8"/>
+    <path d="M22 273c50-63 103-63 151-18 35-73 63-81 84-57v167H22z" fill="#eaf6fc"/>
+    <circle cx="184" cy="111" r="39" fill="#fff0c2"/>
+    <path d="M85 213c7-61 50-101 103-89 48 12 70 53 70 89v27H85z" fill="#28466a"/>
+    <path d="M112 147c4-41 32-63 61-62 33 1 56 29 52 70-19-8-34-22-45-39-16 20-39 32-68 31" fill="#263b57"/>
+    <path d="M94 284h106" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".9"/>
+    <path d="M94 310h77" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".68"/>
+    <rect x="22" y="330" width="194" height="6" rx="3" fill="#fff" opacity=".55"/>
+  </g>
+  <g filter="url(#shadow)" transform="translate(485 140)">
+    <path d="M151 55c-34 0-60 25-60 59 0 47 60 112 60 112s60-65 60-112c0-34-26-59-60-59" fill="#fff" stroke="#437da3" stroke-width="7"/>
+    <circle cx="151" cy="114" r="28" fill="#91c9e8"/>
+    <path d="M111 226h80l32 194H79z" fill="#5b9ec6" stroke="#fff" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M128 251c7 40 7 103-4 147M165 251c-4 45 3 99 17 143" stroke="#d9effa" stroke-width="7" stroke-linecap="round" opacity=".9"/>
+    <rect x="55" y="418" width="191" height="23" rx="11" fill="#2d5874"/>
+    <path d="M151 441v43" stroke="#4a6c83" stroke-width="8"/>
+  </g>
+  <g transform="translate(661 459) rotate(8)"><rect width="104" height="104" rx="24" fill="#fff" filter="url(#shadow)"/><circle cx="52" cy="52" r="32" fill="#f4c957"/><path d="M52 28v48M28 52h48" stroke="#fff" stroke-width="9" stroke-linecap="round"/></g>
+  <path d="M58 112c85-39 159-50 237-38" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity=".75"/>
+</svg>
