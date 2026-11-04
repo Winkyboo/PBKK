@@ -219,7 +219,7 @@ Tabel `equipments` menyimpan stok dan tarif sewa alat. Pada SIAKAD, `frs_detail`
 ![mengajukanBooking](Documentation/otwbook.png)
 ![bookselesai](Documentation/donebook.png)
 
-- **Panel admin:** tambahkan screenshot pengelolaan studio, alat, atau booking di sini.
+- **Panel admin:** 
 
 ![dashboard](Documentation/dashboardmin.png)
 ![kelolastudio](Documentation/kelolastudio.png)
