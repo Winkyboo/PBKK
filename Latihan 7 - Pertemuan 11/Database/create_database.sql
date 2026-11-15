@@ -1,0 +1,5 @@
+IF DB_ID(N'ShopEaseAuthDB') IS NULL
+BEGIN
+    CREATE DATABASE [ShopEaseAuthDB];
+END;
+GO
