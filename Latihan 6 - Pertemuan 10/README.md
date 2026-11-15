@@ -129,8 +129,6 @@ php spark routes
 
 ## 9. Dokumentasi Tampilan
 
-Tambahkan screenshot hasil aplikasi pada tautan kosong berikut. Dokumentasikan tampilan desktop dan ponsel untuk Beranda, serta halaman Tentang dan Kontak.
-
 ### Beranda
 
 ![Beranda](documentation/image.png)
