@@ -218,35 +218,57 @@ Ganti tautan kosong dengan path screenshot di folder `documentation`. Ambil scre
 
 ### Beranda dan katalog
 
-- ![Beranda dengan produk dari database]() — Beranda yang menampilkan kategori dan produk awal.
-- ![Katalog produk]() — Katalog lengkap sebelum filter digunakan.
-- ![Pencarian dan filter kategori]() — Hasil pencarian produk dengan kategori atau urutan harga.
-- ![Detail produk]() — Detail foto, deskripsi, harga, dan stok.
+![Beranda](documentation/image.png)
+
+![Beranda](documentation/beranda2.png)
+
+![Katalog Produk](documentation/katalog.png)
+
+![Katalog Produk](documentation/katalog2.png)
+
+![Detail Produk](documentation/product.png)
 
 ### Keranjang, checkout, dan pengiriman
 
-- ![Keranjang belanja]() — Produk di keranjang beserta pengaturan jumlah dan subtotal.
-- ![Form checkout]() — Alamat penerima, pilihan pengiriman, dan pembayaran COD.
-- ![Pesanan berhasil dibuat]() — Detail nomor pesanan, total, dan alamat tujuan.
-- ![Riwayat pesanan customer]() — Status tiap pesanan pada halaman customer.
-- ![Pengelolaan pesanan admin]() — Admin memperbarui status, memasukkan nomor resi, dan mengubah status pembayaran.
-- ![Resi pengiriman]() — Detail customer setelah pesanan dikirim dan nomor resi tersedia.
+![Keranjang Belanja](documentation/keranjang.png)
+
+![Checkout](documentation/checkout1.png)
+
+![Checkout](documentation/checkout2.png)
+
+![Pesanan berhasil dibuat](documentation/sucess.png)
+
+![Pesanan saya](documentation/riwayat.png)
+
+![Pengelolaan Pesanan](documentation/kelola.png)
+
+![Pengelolaan Pesanan](documentation/kelola2.png)
+
+![Pesanan Selesai](documentation/resiupdate.png)
 
 ### CRUD produk
 
-- ![Daftar produk admin]() — Daftar produk di panel admin.
-- ![Form tambah produk]() — Form produk sebelum disimpan.
-- ![Produk berhasil ditambahkan]() — Produk baru yang muncul di daftar.
-- ![Form ubah produk]() — Perubahan data produk sebelum dan sesudah disimpan.
-- ![Konfirmasi hapus produk]() — Hasil setelah produk dihapus.
-- ![Produk nonaktif]() — Produk nonaktif tetap tampak untuk admin dan tidak ada di katalog publik.
+![Produk Panel Admin](documentation/adminpanel.png)
+
+![Tambah Produk](documentation/tambah.png)
+
+![Produk berhasil ditambahkan](documentation/addsuccess.png)
+
+![Ubah produk](documentation/ubah.png)
+
+![Konfirmasi Hapus Produk](documentation/Konfirm.png)
+
+![Nonaktif produk](documentation/non.png)
+
+![Tampilan akhir](documentation/ui.png)
 
 ### CRUD kategori dan hak akses
 
-- ![Daftar kategori admin]() — Daftar kategori dan jumlah produk di setiap kategori.
-- ![Tambah atau ubah kategori]() — Form kategori.
-- ![Kategori masih digunakan]() — Daftar kategori yang menunjukkan label "Dipakai" untuk kategori berisi produk.
-- ![Akses admin ditolak]() — Respons 403 saat customer mencoba membuka `/admin/products`.
+![Daftar Kategori](documentation/cat.png)
+
+![Menambah Kategori](documentation/add.png)
+
+![Akses ditolak](documentation/accessdenied.png)
 
 ## 8. Struktur Proyek
 
